@@ -2,12 +2,15 @@ package org.bool.integration.dot;
 
 import org.bool.integration.dot.api.model.IntegrationGraph;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@TestInstance(Lifecycle.PER_CLASS)
 class JacksonGraphReaderTest {
 
     private final JacksonGraphReader reader = new JacksonGraphReader();
