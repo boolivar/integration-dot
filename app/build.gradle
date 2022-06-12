@@ -1,0 +1,14 @@
+plugins {
+    id "org.springframework.boot" version "2.7.0"
+    id "java-conventions"
+}
+
+dependencies {
+    implementation project(":api")
+    implementation project(":core")
+
+    implementation platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springdoc:springdoc-openapi-ui:1.5.13"
+}
