@@ -1,1 +1,3 @@
 rootProject.name = "integration-dot"
+
+include "api"
