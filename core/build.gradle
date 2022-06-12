@@ -1,0 +1,11 @@
+plugins {
+    id "java-library"
+    id "java-conventions"
+}
+
+dependencies {
+    implementation project(":api")
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
+    implementation "guru.nidi:graphviz-java:0.18.1"
+}

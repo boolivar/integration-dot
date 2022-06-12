@@ -1,0 +1,783 @@
+{
+  "contentDescriptor": {
+    "providerVersion": "5.2.4.RELEASE",
+    "providerFormatVersion": 1.1,
+    "provider": "spring-integration",
+    "name": "analog"
+  },
+  "nodes": [
+    {
+      "nodeId": 1,
+      "componentType": "ExecutorSubscribableChannel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "clientInboundChannel"
+    },
+    {
+      "nodeId": 2,
+      "componentType": "ExecutorSubscribableChannel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "clientOutboundChannel"
+    },
+    {
+      "nodeId": 3,
+      "componentType": "ExecutorSubscribableChannel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "brokerChannel"
+    },
+    {
+      "nodeId": 4,
+      "stats": {
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "errorRate": {},
+        "sendDuration": {},
+        "statsEnabled": true,
+        "sendRate": {},
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "null-channel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "receiveCounters": {},
+      "name": "nullChannel"
+    },
+    {
+      "nodeId": 5,
+      "stats": {
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "errorRate": {},
+        "sendDuration": {},
+        "statsEnabled": true,
+        "sendRate": {},
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "publish-subscribe-channel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "errorChannel"
+    },
+    {
+      "nodeId": 6,
+      "stats": {
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "timeSinceLastSend": 34001.534600019455,
+        "meanSendDuration": 1167.1534,
+        "errorRate": {},
+        "sendDuration": {
+          "count": 1,
+          "min": 1167.1534,
+          "max": 1167.1534,
+          "mean": 1167.1534,
+          "countLong": 1
+        },
+        "statsEnabled": true,
+        "sendCount": 1,
+        "meanSendRate": 0.0148272955535562,
+        "sendRate": {
+          "count": 1,
+          "min": 33.44113639998436,
+          "max": 33.44113639998436,
+          "mean": 0.01482720779047892,
+          "countLong": 1
+        },
+        "minSendDuration": 1167.1534,
+        "maxSendDuration": 1167.1534,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "channel",
+      "sendTimers": {
+        "successes": {
+          "count": 1,
+          "mean": 1167.1317,
+          "max": 1167.1317
+        },
+        "failures": {}
+      },
+      "name": "serverRegistrationRmiOutChannel_myself"
+    },
+    {
+      "nodeId": 7,
+      "stats": {
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "timeSinceLastSend": 34003.53180000186,
+        "meanSendDuration": 1166.5964,
+        "errorRate": {},
+        "sendDuration": {
+          "count": 1,
+          "min": 1166.5964,
+          "max": 1166.5964,
+          "mean": 1166.5964,
+          "countLong": 1
+        },
+        "statsEnabled": true,
+        "sendCount": 1,
+        "meanSendRate": 0.014826861760807346,
+        "sendRate": {
+          "count": 1,
+          "min": 33.44124090000987,
+          "max": 33.44124090000987,
+          "mean": 0.014826784642797738,
+          "countLong": 1
+        },
+        "minSendDuration": 1166.5964,
+        "maxSendDuration": 1166.5964,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "channel",
+      "sendTimers": {
+        "successes": {
+          "count": 1,
+          "mean": 1166.5767,
+          "max": 1166.5767
+        },
+        "failures": {}
+      },
+      "name": "org.springframework.integration.dsl.StandardIntegrationFlow#0.channel#0"
+    },
+    {
+      "nodeId": 8,
+      "stats": {
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "timeSinceLastSend": 33987.28869998455,
+        "meanSendDuration": 145.2137,
+        "errorRate": {},
+        "sendDuration": {
+          "count": 1,
+          "min": 145.2137,
+          "max": 145.2137,
+          "mean": 145.2137,
+          "countLong": 1
+        },
+        "statsEnabled": true,
+        "sendCount": 1,
+        "meanSendRate": 0.014826446722376622,
+        "sendRate": {
+          "count": 1,
+          "min": 33.45937670001388,
+          "max": 33.45937670001388,
+          "mean": 0.014826387787925964,
+          "countLong": 1
+        },
+        "minSendDuration": 145.2137,
+        "maxSendDuration": 145.2137,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "channel",
+      "sendTimers": {
+        "successes": {
+          "count": 1,
+          "mean": 145.2065,
+          "max": 145.2065
+        },
+        "failures": {}
+      },
+      "name": "agentRegistrationRmiInChannel"
+    },
+    {
+      "nodeId": 9,
+      "componentType": "fixed-subscriber-channel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "agentRmiRegisteringFlow.channel#0"
+    },
+    {
+      "nodeId": 10,
+      "stats": {
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "timeSinceLastSend": 33989.799400001764,
+        "meanSendDuration": 144.8288,
+        "errorRate": {},
+        "sendDuration": {
+          "count": 1,
+          "min": 144.8288,
+          "max": 144.8288,
+          "mean": 144.8288,
+          "countLong": 1
+        },
+        "statsEnabled": true,
+        "sendCount": 1,
+        "meanSendRate": 0.01482566535688508,
+        "sendRate": {
+          "count": 1,
+          "min": 33.45946819999814,
+          "max": 33.45946819999814,
+          "mean": 0.014825497101628742,
+          "countLong": 1
+        },
+        "minSendDuration": 144.8288,
+        "maxSendDuration": 144.8288,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "channel",
+      "sendTimers": {
+        "successes": {
+          "count": 1,
+          "mean": 144.817,
+          "max": 144.817
+        },
+        "failures": {}
+      },
+      "name": "agentRmiRegisteringFlow.subFlow#0.channel#0"
+    },
+    {
+      "nodeId": 11,
+      "componentType": "fixed-subscriber-channel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "agentRmiRegisteringFlow.subFlow#0.channel#1"
+    },
+    {
+      "nodeId": 12,
+      "stats": {
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "errorRate": {},
+        "sendDuration": {},
+        "statsEnabled": true,
+        "sendRate": {},
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "channel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "agentRmiRegisteringFlow.subFlow#1.channel#0"
+    },
+    {
+      "nodeId": 13,
+      "componentType": "fixed-subscriber-channel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "agentRmiRegisteringFlow.subFlow#1.channel#1"
+    },
+    {
+      "nodeId": 14,
+      "stats": {
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "errorRate": {},
+        "sendDuration": {},
+        "statsEnabled": true,
+        "sendRate": {},
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "channel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "agentRmiRegisteringFlow.channel#1"
+    },
+    {
+      "nodeId": 15,
+      "stats": {
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "timeSinceLastSend": 34018.349400013685,
+        "meanSendDuration": 1171.2744,
+        "errorRate": {},
+        "sendDuration": {
+          "count": 1,
+          "min": 1171.2744,
+          "max": 1171.2744,
+          "mean": 1171.2744,
+          "countLong": 1
+        },
+        "statsEnabled": true,
+        "sendCount": 1,
+        "meanSendRate": 0.014824480727641646,
+        "sendRate": {
+          "count": 1,
+          "min": 33.43723300001025,
+          "max": 33.43723300001025,
+          "mean": 0.01482441312816736,
+          "countLong": 1
+        },
+        "minSendDuration": 1171.2744,
+        "maxSendDuration": 1171.2744,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "channel",
+      "sendTimers": {
+        "successes": {
+          "count": 1,
+          "mean": 1170.1409,
+          "max": 1170.1409
+        },
+        "failures": {}
+      },
+      "name": "serverRegistrationRouterChannel"
+    },
+    {
+      "nodeId": 16,
+      "stats": {
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "errorRate": {},
+        "sendDuration": {},
+        "statsEnabled": true,
+        "sendRate": {},
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "channel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "serverRmiPayloadInChannel"
+    },
+    {
+      "nodeId": 17,
+      "stats": {
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "errorRate": {},
+        "sendDuration": {},
+        "statsEnabled": true,
+        "sendRate": {},
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "channel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "serverRmiPayloadFlow.subFlow#0.channel#0"
+    },
+    {
+      "nodeId": 18,
+      "stats": {
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "errorRate": {},
+        "sendDuration": {},
+        "statsEnabled": true,
+        "sendRate": {},
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "channel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "serverRmiPayloadFlow.subFlow#1.channel#0"
+    },
+    {
+      "nodeId": 19,
+      "stats": {
+        "sendCount": 1,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "rmi:inbound-gateway",
+      "output": "agentRegistrationRmiInChannel",
+      "name": "agentRmiRegisteringFlow.rmi:inbound-gateway#0"
+    },
+    {
+      "nodeId": 20,
+      "stats": {
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "rmi:inbound-gateway",
+      "output": "serverRmiPayloadInChannel",
+      "name": "serverRmiPayloadFlow.rmi:inbound-gateway#0"
+    },
+    {
+      "nodeId": 21,
+      "componentType": "gateway",
+      "output": "serverRegistrationRouterChannel",
+      "name": "remoteGateway.switchRegistration(tech.toparvion.analog.model.remote.TrackingRequest,boolean)"
+    },
+    {
+      "nodeId": 22,
+      "stats": {
+        "duration": {},
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "statsEnabled": true,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "logging-channel-adapter",
+      "input": "errorChannel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "_org.springframework.integration.errorLogger"
+    },
+    {
+      "nodeId": 23,
+      "stats": {
+        "duration": {
+          "count": 1,
+          "min": 1166.9244,
+          "max": 1166.9244,
+          "mean": 1166.9244,
+          "countLong": 1
+        },
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "statsEnabled": true,
+        "meanDuration": 1166.9244,
+        "minDuration": 1166.9244,
+        "maxDuration": 1166.9244,
+        "handleCount": 1,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "header-enricher",
+      "output": "org.springframework.integration.dsl.StandardIntegrationFlow#0.channel#0",
+      "input": "serverRegistrationRmiOutChannel_myself",
+      "sendTimers": {
+        "successes": {
+          "count": 1,
+          "mean": 1166.9111,
+          "max": 1166.9111
+        },
+        "failures": {}
+      },
+      "name": "org.springframework.integration.dsl.StandardIntegrationFlow#0.header-enricher#1"
+    },
+    {
+      "nodeId": 24,
+      "stats": {
+        "duration": {
+          "count": 1,
+          "min": 1166.2085,
+          "max": 1166.2085,
+          "mean": 1166.2085,
+          "countLong": 1
+        },
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "statsEnabled": true,
+        "meanDuration": 1166.2085,
+        "minDuration": 1166.2085,
+        "maxDuration": 1166.2085,
+        "handleCount": 1,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "rmi:outbound-gateway",
+      "input": "org.springframework.integration.dsl.StandardIntegrationFlow#0.channel#0",
+      "sendTimers": {
+        "successes": {
+          "count": 1,
+          "mean": 1166.1795,
+          "max": 1166.1795
+        },
+        "failures": {}
+      },
+      "name": "org.springframework.integration.dsl.StandardIntegrationFlow#0.rmi:outbound-gateway#0"
+    },
+    {
+      "nodeId": 25,
+      "stats": {
+        "duration": {
+          "count": 1,
+          "min": 145.1527,
+          "max": 145.1527,
+          "mean": 145.1527,
+          "countLong": 1
+        },
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "statsEnabled": true,
+        "meanDuration": 145.1527,
+        "minDuration": 145.1527,
+        "maxDuration": 145.1527,
+        "handleCount": 1,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "router",
+      "properties": {
+        "expression": "headers.registrationMode"
+      },
+      "input": "agentRegistrationRmiInChannel",
+      "sendTimers": {
+        "successes": {
+          "count": 1,
+          "mean": 145.1493,
+          "max": 145.1493
+        },
+        "failures": {}
+      },
+      "routes": [
+        "agentRmiRegisteringFlow.subFlow#0.channel#0",
+        "agentRmiRegisteringFlow.subFlow#1.channel#0"
+      ],
+      "name": "agentRegistrationRouter"
+    },
+    {
+      "nodeId": 26,
+      "stats": {
+        "duration": {
+          "count": 1,
+          "min": 144.704,
+          "max": 144.704,
+          "mean": 144.704,
+          "countLong": 1
+        },
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "statsEnabled": true,
+        "meanDuration": 144.704,
+        "minDuration": 144.704,
+        "maxDuration": 144.704,
+        "handleCount": 1,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "service-activator",
+      "output": "agentRmiRegisteringFlow.subFlow#0.channel#1",
+      "input": "agentRmiRegisteringFlow.subFlow#0.channel#0",
+      "sendTimers": {
+        "successes": {
+          "count": 1,
+          "mean": 144.6975,
+          "max": 144.6975
+        },
+        "failures": {}
+      },
+      "name": "agentRmiRegisteringFlow.subFlow#0.org.springframework.integration.config.ConsumerEndpointFactoryBean#0"
+    },
+    {
+      "nodeId": 27,
+      "stats": {
+        "duration": {},
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "statsEnabled": true,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "service-activator",
+      "output": "agentRmiRegisteringFlow.subFlow#1.channel#1",
+      "input": "agentRmiRegisteringFlow.subFlow#1.channel#0",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "agentRmiRegisteringFlow.subFlow#1.org.springframework.integration.config.ConsumerEndpointFactoryBean#0"
+    },
+    {
+      "nodeId": 28,
+      "stats": {
+        "duration": {},
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "statsEnabled": true,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "bridge",
+      "input": "agentRmiRegisteringFlow.channel#1",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "agentRmiRegisteringFlow.org.springframework.integration.config.ConsumerEndpointFactoryBean#0"
+    },
+    {
+      "nodeId": 29,
+      "stats": {
+        "duration": {
+          "count": 1,
+          "min": 1169.8739,
+          "max": 1169.8739,
+          "mean": 1169.8739,
+          "countLong": 1
+        },
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "statsEnabled": true,
+        "meanDuration": 1169.8739,
+        "minDuration": 1169.8739,
+        "maxDuration": 1169.8739,
+        "handleCount": 1,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "router",
+      "properties": {
+        "expression": "'serverRegistrationRmiOutChannel_'.concat(payload.logPath.node)"
+      },
+      "input": "serverRegistrationRouterChannel",
+      "sendTimers": {
+        "successes": {
+          "count": 1,
+          "mean": 1169.8688,
+          "max": 1169.8688
+        },
+        "failures": {}
+      },
+      "name": "serverRegistrationRouter.org.springframework.integration.config.ConsumerEndpointFactoryBean#0"
+    },
+    {
+      "nodeId": 30,
+      "stats": {
+        "duration": {},
+        "loggingEnabled": true,
+        "countsEnabled": true,
+        "statsEnabled": true,
+        "deprecated": "stats are deprecated in favor of sendTimers and receiveCounters"
+      },
+      "componentType": "router",
+      "input": "serverRmiPayloadInChannel",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "routes": [
+        "serverRmiPayloadFlow.subFlow#0.channel#0",
+        "serverRmiPayloadFlow.subFlow#1.channel#0"
+      ],
+      "name": "serverRmiPayloadFlow.org.springframework.integration.config.ConsumerEndpointFactoryBean#0"
+    },
+    {
+      "nodeId": 31,
+      "componentType": "ServerConfig$$Lambda$994/0x00000008010fd440",
+      "input": "serverRmiPayloadFlow.subFlow#0.channel#0",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "serverRmiPayloadFlow.subFlow#0.org.springframework.integration.config.ConsumerEndpointFactoryBean#0"
+    },
+    {
+      "nodeId": 32,
+      "componentType": "ServerConfig$$Lambda$996/0x0000000801110440",
+      "input": "serverRmiPayloadFlow.subFlow#1.channel#0",
+      "sendTimers": {
+        "successes": {},
+        "failures": {}
+      },
+      "name": "serverRmiPayloadFlow.subFlow#1.org.springframework.integration.config.ConsumerEndpointFactoryBean#0"
+    }
+  ],
+  "links": [
+    {
+      "from": 19,
+      "to": 8,
+      "type": "output"
+    },
+    {
+      "from": 20,
+      "to": 16,
+      "type": "output"
+    },
+    {
+      "from": 21,
+      "to": 15,
+      "type": "output"
+    },
+    {
+      "from": 5,
+      "to": 22,
+      "type": "input"
+    },
+    {
+      "from": 6,
+      "to": 23,
+      "type": "input"
+    },
+    {
+      "from": 23,
+      "to": 7,
+      "type": "output"
+    },
+    {
+      "from": 7,
+      "to": 24,
+      "type": "input"
+    },
+    {
+      "from": 8,
+      "to": 25,
+      "type": "input"
+    },
+    {
+      "from": 25,
+      "to": 10,
+      "type": "route"
+    },
+    {
+      "from": 25,
+      "to": 12,
+      "type": "route"
+    },
+    {
+      "from": 10,
+      "to": 26,
+      "type": "input"
+    },
+    {
+      "from": 26,
+      "to": 11,
+      "type": "output"
+    },
+    {
+      "from": 12,
+      "to": 27,
+      "type": "input"
+    },
+    {
+      "from": 27,
+      "to": 13,
+      "type": "output"
+    },
+    {
+      "from": 14,
+      "to": 28,
+      "type": "input"
+    },
+    {
+      "from": 15,
+      "to": 29,
+      "type": "input"
+    },
+    {
+      "from": 16,
+      "to": 30,
+      "type": "input"
+    },
+    {
+      "from": 30,
+      "to": 17,
+      "type": "route"
+    },
+    {
+      "from": 30,
+      "to": 18,
+      "type": "route"
+    },
+    {
+      "from": 17,
+      "to": 31,
+      "type": "input"
+    },
+    {
+      "from": 18,
+      "to": 32,
+      "type": "input"
+    }
+  ]
+}
