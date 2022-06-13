@@ -3,6 +3,8 @@ plugins {
     id "java-conventions"
 }
 
+task stage(dependsOn: "build")
+
 dependencies {
     implementation project(":api")
     implementation project(":core")
