@@ -1,33 +1,45 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <script type="text/javascript" src="/webjars/viz.js-graphviz-java/viz.js"></script>
-    <script type="text/javascript" src="/webjars/viz.js-graphviz-java/full.render.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
-    <textarea id="jsonGraph" name="jsonGraph" rows="40" cols="60"></textarea>
-    <button type="button" onclick="submit()">Submit</button>
-    
-    <div id="network"></div>
-    
+
+    <div class="d-flex flex-column vh-100 align-items-start">
+        <button id="control" type="button" class="btn btn-link" onclick="reset()">&lt back</button>
+        <div id="container" class="d-none flex-grow-1 w-100"></div>
+        <div id="form" class="d-flex flex-column flex-grow-1 w-100 align-items-start">
+            <textarea id="json" class="form-control flex-grow-1 w-50"></textarea>
+            <button class="btn btn-primary" type="submit" onclick="submit()">Submit</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webjars/d3js/d3.min.js"></script>
+    <script type="text/javascript" src="/webjars/hpcc-js__wasm/dist/index.min.js"></script>
+    <script type="text/javascript" src="/webjars/d3-graphviz/build/d3-graphviz.min.js"></script>
     <script type="text/javascript">
         function submit() {
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "/convert");
             xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onload = handleResponse;
-            xhr.send(document.getElementById("jsonGraph").value);
+            xhr.onload = handleD3Response;
+            xhr.send(document.getElementById("json").value);
         }
-        function handleResponse() {
-            var viz = new Viz();
-            viz.renderSVGElement(this.responseText)
-               .then(function(element) {
-                   var container = document.getElementById("network");
-                   while (container.firstChild) {
-                       container.removeChild(container.firstChild);
-                   }
-                   container.appendChild(element);
-               })
+
+        function handleD3Response() {
+            document.getElementById("form").classList.add("d-none");
+            document.getElementById("control").classList.remove("d-none");
+            document.getElementById("container").classList.remove("d-none");
+            d3.select("#container").graphviz().renderDot(this.responseText);
+        }
+        
+        function reset() {
+            document.getElementById("form").classList.remove("d-none");
+            document.getElementById("control").classList.add("d-none");
+            document.getElementById("container").classList.add("d-none");
         }
     </script>
 </body>
