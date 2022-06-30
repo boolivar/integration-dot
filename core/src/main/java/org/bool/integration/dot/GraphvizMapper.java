@@ -9,6 +9,7 @@ import org.bool.integration.dot.api.model.IntegrationNode;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -18,7 +19,7 @@ import static guru.nidi.graphviz.model.Factory.*;
 public class GraphvizMapper {
 
     public Graph mapIntegrationGraph(IntegrationGraph graph) {
-        return graph(graph.getContentDescriptor().getName())
+        return graph(Objects.toString(graph.getContentDescriptor().getName(), ""))
                 .directed()
                 .with(mapNodes(graph.getNodes()))
                 .with(collect(graph.getLinks(), this::mapLink))

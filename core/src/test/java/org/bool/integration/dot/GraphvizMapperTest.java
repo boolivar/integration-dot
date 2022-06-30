@@ -28,7 +28,7 @@ class GraphvizMapperTest {
         MutableGraph graph = mapper.mapIntegrationGraph(integrationGraph).toMutable();
 
         assertThat(graph.name().toString())
-                .isNull();
+                .isNotNull();
         assertThat(graph.links())
                 .isEmpty();
         assertThat(graph.rootNodes())
