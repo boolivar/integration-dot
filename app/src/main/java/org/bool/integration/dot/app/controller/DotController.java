@@ -1,7 +1,7 @@
 package org.bool.integration.dot.app.controller;
 
-import org.bool.integration.dot.api.DotRenderer;
 import org.bool.integration.dot.api.model.IntegrationGraph;
+import org.bool.integration.dot.app.service.IntegrationGraphConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -17,11 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 public class DotController {
 
     @Autowired
-    private DotRenderer renderer;
+    private IntegrationGraphConverter converter;
 
     @PostMapping(path = "convert", produces = MediaType.TEXT_PLAIN_VALUE)
     public void convert(@RequestBody IntegrationGraph graph, HttpServletResponse response) throws IOException {
         response.setHeader(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN_VALUE);
-        renderer.render(graph, response.getOutputStream());
+        converter.convert(graph).write(response.getOutputStream());
     }
 }
