@@ -1,1 +1,3 @@
 springdoc.packagesToScan: org.bool.integration.dot.app
+
+management.endpoints.web.exposure.include: integrationgraph
