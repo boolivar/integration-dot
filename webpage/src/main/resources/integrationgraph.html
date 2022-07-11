@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IntegrationGraph</title>
+</head>
+<body>
+    <div id="container" data-graph='{integration-graph}'></div>
+
+    <script src="/webjars/boolivar__sidjs/dist/sidjs.min.js"></script>
+    <script src="/webjars/hpcc-js__wasm/dist/index.min.js"></script>
+    <script src="/webjars/d3/dist/d3.min.js"></script>
+    <script src="/webjars/d3-graphviz/build/d3-graphviz.min.js"></script>
+    
+    <script type="text/javascript">
+        var dot = new Sidjs().convert(document.getElementById("container").getAttribute("data-graph"));
+        d3.select("#container").graphviz().renderDot(dot);
+    </script>
+</body>
+</html>
