@@ -6,7 +6,6 @@ import guru.nidi.graphviz.model.Graph;
 import org.bool.integration.dot.GraphvizMapper;
 import org.bool.integration.dot.api.model.IntegrationGraph;
 import org.bool.integration.dot.app.service.GraphvizWriter;
-import org.bool.integration.dot.app.service.IntegrationGraphConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.config.EnableIntegration;
@@ -22,7 +21,7 @@ public class IntegrationConfig {
     public IntegrationFlow integrationConverterFlow() {
         return IntegrationFlows.from("integrationConverterChannel")
                 .enrichHeaders(enricher -> enricher.<IntegrationGraph>headerFunction("formatVersion", msg -> msg.getPayload().getContentDescriptor().getProviderFormatVersion()))
-                .route(Message.class, msg -> msg.getHeaders().get("formatVersion"), router -> router.channelMapping("1.2", "convert12Channel"))
+                .route(Message.class, msg -> msg.getHeaders().get("formatVersion"), router -> router.channelMapping("1.2", "convert12Channel").resolutionRequired(false).defaultOutputChannel("invalidVersionChannel"))
                 .get()
                 ;
     }
@@ -32,6 +31,14 @@ public class IntegrationConfig {
         return IntegrationFlows.from("convert12Channel")
                 .transform(mapper::mapIntegrationGraph)
                 .channel("graphResultChannel")
+                .get()
+                ;
+    }
+
+    @Bean
+    public IntegrationFlow invalidVersionFlow() {
+        return IntegrationFlows.from("invalidVersionChannel")
+                .handle(msg -> { throw new IllegalArgumentException("Version not supported: " + msg.getHeaders().get("formatVersion")); })
                 .get()
                 ;
     }
