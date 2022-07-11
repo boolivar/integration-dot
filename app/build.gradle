@@ -1,19 +1,16 @@
 plugins {
-    id "org.springframework.boot" version "2.7.0"
     id "java-conventions"
+    id "org.springframework.boot" version "${springBootVersion}"
 }
 
 task stage(dependsOn: "build")
 
 dependencies {
     implementation project(":api")
-    implementation project(":core")
-
-    implementation platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+    implementation project(":webpage")
 
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-integration"
     implementation "org.springdoc:springdoc-openapi-ui:1.6.9"
-    implementation "org.webjars.npm:boolivar__sidjs:0.1.0"
 }
