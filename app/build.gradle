@@ -7,6 +7,7 @@ task stage(dependsOn: "build")
 
 dependencies {
     implementation project(":api")
+    implementation project(":core")
     implementation project(":webpage")
 
     implementation "org.springframework.boot:spring-boot-starter-web"
