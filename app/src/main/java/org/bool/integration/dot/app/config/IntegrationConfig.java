@@ -38,7 +38,9 @@ public class IntegrationConfig {
     @Bean
     public IntegrationFlow invalidVersionFlow() {
         return IntegrationFlows.from("invalidVersionChannel")
-                .handle(msg -> { throw new IllegalArgumentException("Version not supported: " + msg.getHeaders().get("formatVersion")); })
+                .handle(msg -> {
+                    throw new IllegalArgumentException("Version not supported: " + msg.getHeaders().get("formatVersion"));
+                })
                 .get()
                 ;
     }
