@@ -6,9 +6,9 @@ plugins {
 dependencies {
     implementation project(":core")
 
-    implementation "org.springframework:spring-web"
+    compileOnly "javax.servlet:javax.servlet-api"
+    implementation "org.springframework:spring-webmvc"
     implementation "org.springframework.integration:spring-integration-core"
-    implementation "com.fasterxml.jackson.core:jackson-databind"
     
     runtimeOnly "org.webjars:webjars-locator-core:0.52"
     runtimeOnly "org.webjars.npm:boolivar__sidjs:0.1.0"
